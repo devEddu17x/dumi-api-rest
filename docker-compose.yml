@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-dumi
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: dumi
+      MYSQL_DATABASE: dumi
+      MYSQL_USER: dumi_user
+      MYSQL_PASSWORD: dumi_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - dumi_data:/var/lib/mysql
+volumes:
+  dumi_data:

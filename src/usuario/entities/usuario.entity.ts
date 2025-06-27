@@ -2,13 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
-export class User {
+export class Usuario {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -42,13 +41,13 @@ export class User {
 
   @CreateDateColumn({
     name: 'fecha_creacion',
-    type: 'time with time zone',
+    type: 'timestamp',
   })
   createdAt: Date;
 
   @UpdateDateColumn({
     name: 'fecha_actualizacion',
-    type: 'time with time zone',
+    type: 'timestamp',
   })
   updatedAt: Date;
 }
